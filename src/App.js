@@ -6,9 +6,10 @@ const collapseContent = `Hot chicken cred 90's vaporware chicharrones truffaut y
 
 function App() {
   return (
-    <div>
+    <Container className="py-5">
+      <h1>A Collapse Component with Emotion</h1>
       <Collapse label="Toggle">{collapseContent}</Collapse>
-    </div>
+    </Container>
   );
 }
 
