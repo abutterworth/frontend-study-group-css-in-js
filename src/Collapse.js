@@ -13,6 +13,7 @@ const CollapseContainer = ({ children }) => (
 const CollapseButton = ({ children, isOpen, ...attrs }) => (
   <button
     {...attrs}
+    aria-expanded={isOpen}
   >
     {children}
     {isOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />}
