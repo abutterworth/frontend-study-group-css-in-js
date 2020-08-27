@@ -16,21 +16,21 @@ const CollapseContainer = ({ children }) => (
 
 const CollapseButton = ({ children, isOpen, ...attrs }) => (
   <button
-    css={css`
+    css={theme => `
       width: 100%;
       text-align: left;
-      border-radius: 7px;
-      border: solid 1px black ;
-      background: black;
+      border-radius: ${theme.radii.md};
+      border: solid 1px ${theme.colors.primary};
+      background: ${theme.colors.primary};
       color: white;
       display: flex;
       padding: .5rem .5rem .5rem 1rem;
       &:hover {
-        background: #444;
+        background: ${theme.colors.primaryHover};
       }
       &:focus {
         outline: none;
-        box-shadow: 0 0 0px 2px blue, inset 0 0 0 1px white;
+        box-shadow: 0 0 0px 2px ${theme.colors.focus}, inset 0 0 0 1px white;
       }
       &[aria-expanded="true"] {
         border-bottom-left-radius: 0;
@@ -50,12 +50,12 @@ const CollapseButton = ({ children, isOpen, ...attrs }) => (
 const CollapseContent = ({ children, ...attrs }) => (
   <div
     {...attrs}
-    css={css`
+    css={theme => `
       padding: 1rem;
-      border: solid 1px black;
+      border: solid 1px ${theme.colors.primary};
       border-top: none;
-      border-bottom-left-radius: 8px;
-      border-bottom-right-radius: 8px;
+      border-bottom-left-radius: ${theme.radii.md};
+      border-bottom-right-radius: ${theme.radii.md};
     `}
   >
     {children}
