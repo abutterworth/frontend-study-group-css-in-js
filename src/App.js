@@ -9,8 +9,11 @@ const collapseContent = `Hot chicken cred 90's vaporware chicharrones truffaut y
 const theme = {
   colors: {
     primary: '#C74233',
+    text: '#000',
     primaryHover: '#942C20',
     focus: '#197BBD',
+    inverseText: '#fff',
+    background: '#fff',
   },
   radii: {
     md: '8px',

@@ -22,15 +22,17 @@ const CollapseButton = ({ children, isOpen, ...attrs }) => (
       border-radius: ${theme.radii.md};
       border: solid 1px ${theme.colors.primary};
       background: ${theme.colors.primary};
-      color: white;
+      color: ${theme.colors.inverseText};
       display: flex;
       padding: .5rem .5rem .5rem 1rem;
+      position: relative;
+      z-index: 1;
       &:hover {
         background: ${theme.colors.primaryHover};
       }
       &:focus {
         outline: none;
-        box-shadow: 0 0 0px 2px ${theme.colors.focus}, inset 0 0 0 1px white;
+        box-shadow: 0 0 0px 2px ${theme.colors.focus}, inset 0 0 0 1px ${theme.colors.background};
       }
       &[aria-expanded="true"] {
         border-bottom-left-radius: 0;
@@ -52,10 +54,12 @@ const CollapseContent = ({ children, ...attrs }) => (
     {...attrs}
     css={theme => `
       padding: 1rem;
+      background: ${theme.colors.background};
       border: solid 1px ${theme.colors.primary};
       border-top: none;
       border-bottom-left-radius: ${theme.radii.md};
       border-bottom-right-radius: ${theme.radii.md};
+      color: ${theme.colors.text}
     `}
   >
     {children}
