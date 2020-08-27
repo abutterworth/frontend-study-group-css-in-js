@@ -43,7 +43,14 @@ function App() {
       </ThemeProvider>
       <br/>
       <ThemeProvider theme={darkTheme}>
-        <Collapse label="What does the hipster say?">{collapseContent}</Collapse>
+        <Collapse label="What does the hipster say?">
+          {collapseContent}
+          <br/>
+          <br/>
+          <ThemeProvider theme={theme}>
+            <Collapse label="What does the hipster say?">{collapseContent}</Collapse>
+          </ThemeProvider>
+        </Collapse>
       </ThemeProvider>
     </Container>
   );
