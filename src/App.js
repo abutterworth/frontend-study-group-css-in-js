@@ -20,11 +20,29 @@ const theme = {
   }
 }
 
+const darkTheme = {
+  colors: {
+    primary: '#f0b',
+    text: '#fff',
+    primaryHover: '##eee',
+    focus: 'blue',
+    inverseText: '#000',
+    background: '#000',
+  },
+  radii: {
+    md: '8px',
+  }
+}
+
 function App() {
   return (
     <Container className="py-5">
       <h1>Sweet Emotion 🎶</h1>
       <ThemeProvider theme={theme}>
+        <Collapse label="What does the hipster say?">{collapseContent}</Collapse>
+      </ThemeProvider>
+      <br/>
+      <ThemeProvider theme={darkTheme}>
         <Collapse label="What does the hipster say?">{collapseContent}</Collapse>
       </ThemeProvider>
     </Container>
