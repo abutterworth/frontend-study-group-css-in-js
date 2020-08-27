@@ -7,8 +7,8 @@ const collapseContent = `Hot chicken cred 90's vaporware chicharrones truffaut y
 function App() {
   return (
     <Container className="py-5">
-      <h1>A Collapse Component with Emotion</h1>
-      <Collapse label="Toggle">{collapseContent}</Collapse>
+      <h1>Sweet Emotion 🎶</h1>
+      <Collapse label="What does the hipster say?">{collapseContent}</Collapse>
     </Container>
   );
 }
