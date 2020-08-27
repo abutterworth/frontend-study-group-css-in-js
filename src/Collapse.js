@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { TransitionReplace } from '@edx/paragon';
+import { ReactComponent as ExpandLessIcon } from './expand-less.svg';
+import { ReactComponent as ExpandMoreIcon } from './expand-more.svg';
 
 const CollapseContainer = ({ children }) => (
   <div>
@@ -8,11 +10,12 @@ const CollapseContainer = ({ children }) => (
   </div>
 );
 
-const CollapseButton = ({ children, ...attrs }) => (
+const CollapseButton = ({ children, isOpen, ...attrs }) => (
   <button
     {...attrs}
   >
     {children}
+    {isOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />}
   </button>
 );
 
@@ -30,7 +33,7 @@ const Collapse = ({ label, children }) => {
 
   return (
     <CollapseContainer>
-      <CollapseButton onClick={toggle}>{label}</CollapseButton>
+      <CollapseButton isOpen={isOpen} onClick={toggle}>{label}</CollapseButton>
       <TransitionReplace>
         {isOpen ? (
           <CollapseContent key="content">{children}</CollapseContent>
