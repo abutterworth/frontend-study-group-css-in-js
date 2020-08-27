@@ -2,21 +2,43 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { TransitionReplace } from '@edx/paragon';
 
+const CollapseContainer = ({ children }) => (
+  <div>
+    {children}
+  </div>
+);
+
+const CollapseButton = ({ children, ...attrs }) => (
+  <button
+    {...attrs}
+  >
+    {children}
+  </button>
+);
+
+const CollapseContent = ({ children, ...attrs }) => (
+  <div
+    {...attrs}
+  >
+    {children}
+  </div>
+);
+
 const Collapse = ({ label, children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
-      <button onClick={toggle}>{label}</button>
+    <CollapseContainer>
+      <CollapseButton onClick={toggle}>{label}</CollapseButton>
       <TransitionReplace>
         {isOpen ? (
-          <div key="content">{children}</div>
+          <CollapseContent key="content">{children}</CollapseContent>
         ) : (
-          <div key="empty"></div>
+          <div></div>
         )}
       </TransitionReplace>
-    </div>
+    </CollapseContainer>
   )
 }
 
